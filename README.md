@@ -181,7 +181,6 @@ curl -X PUT https://responsi-pbb-modul-1.vercel.app/loans/3 \
 1. Clone repository
    ```bash
    git clone https://github.com/Kabazaiku/RESPONSI-PBB-MODUL-1.git
-   cd NAMA-REPO
    ```
 2. Install dependency
    ```bash
