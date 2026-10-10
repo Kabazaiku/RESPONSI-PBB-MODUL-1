@@ -11,7 +11,7 @@ Proyek ini bertujuan menyediakan backend sederhana untuk mencatat peminjaman buk
 - Status **Terlambat** diperbarui otomatis jika `due_date` sudah lewat dan buku belum dikembalikan
 - Hasil `GET` menyertakan nama anggota dan judul buku (relasi)
 
-**Link deployment:** https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app
+**Link deployment:** (https://responsi-pbb-modul-1.vercel.app/)
 
 ## Struktur Data (Schema)
 
@@ -68,9 +68,8 @@ SQL lengkap ada di [`sql/schema.sql`](sql/schema.sql).
 │   ├── routes/
 │   │   └── loanRoutes.js     # definisi endpoint /loans
 │   └── index.js              # setup Express & menjalankan server
-├── .env.example
+├── .env
 ├── package.json
-└── vercel.json
 ```
 
 ## Endpoint
@@ -90,7 +89,7 @@ SQL lengkap ada di [`sql/schema.sql`](sql/schema.sql).
 ### GET /loans?status=Terlambat
 
 ```bash
-curl "https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans?status=Terlambat"
+curl "https://responsi-pbb-modul-1.vercel.app/loans?status=Terlambat"
 ```
 
 ```json
@@ -122,7 +121,7 @@ curl "https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans?status=Terlambat"
 ### POST /loans
 
 ```bash
-curl -X POST https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans \
+curl -X POST https://responsi-pbb-modul-1.vercel.app/loans \
   -H "Content-Type: application/json" \
   -d '{"member_id": 2, "book_id": 3, "due_date": "2026-10-20"}'
 ```
@@ -147,7 +146,7 @@ Response `201 Created`:
 ### PUT /loans/3 (pengembalian buku)
 
 ```bash
-curl -X PUT https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans/3 \
+curl -X PUT https://responsi-pbb-modul-1.vercel.app/loans/3 \
   -H "Content-Type: application/json" \
   -d '{"status": "Dikembalikan"}'
 ```
@@ -189,7 +188,7 @@ curl -X PUT https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans/3 \
    npm install
    ```
 3. Buat project di Supabase, lalu buka **SQL Editor** dan jalankan isi `sql/schema.sql`.
-4. Buat .env dan isi:
+4. Buat .env dan isi, ganti sesuai dengan SUPABASE milikmu:
    ```
    SUPABASE_URL=https://xxxx.supabase.co
    SUPABASE_KEY=service_role_key_kamu
