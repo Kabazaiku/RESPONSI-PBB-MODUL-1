@@ -191,7 +191,7 @@ curl -X PUT https://responsi-pbb-modul-1.vercel.app/loans/3 \
    ```
    SUPABASE_URL=https://xxxx.supabase.co
    SUPABASE_KEY=service_role_key_kamu
-   Port=3000
+   PORT=3000
    ```
    Keduanya ada di **Project Settings → API**. Jangan pernah meng-commit `.env`.
 5. Jalankan server
