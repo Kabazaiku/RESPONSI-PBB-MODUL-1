@@ -1,4 +1,4 @@
-# 📚 API Peminjaman Buku Perpustakaan
+# API Peminjaman Buku Perpustakaan
 
 REST API untuk mengelola data peminjaman buku oleh anggota perpustakaan, dibangun dengan **Node.js**, **Express.js**, dan **Supabase** (PostgreSQL), lalu di-deploy ke **Vercel**.
 
@@ -101,27 +101,21 @@ curl "https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans?status=Terlambat"
       "id": 1,
       "member_id": 1,
       "book_id": 1,
-      "loan_date": "2026-09-25",
-      "due_date": "2026-10-02",
+      "loan_date": "2026-09-26",
+      "due_date": "2026-10-03",
       "return_date": null,
       "status": "Terlambat",
-      "members": { "name": "Ani Lestari", "email": "ani@example.com" },
-      "books": { "title": "Laskar Pelangi", "author": "Andrea Hirata" }
+      "created_at": "2026-10-10T10:13:41.189872+00:00",
+      "members": {
+        "name": "Zikri Arribath Vadila",
+        "email": "zikri@google.com"
+      },
+      "books": {
+        "title": "Buku1",
+        "author": "Penulis1"
+      }
     }
   ]
-}
-```
-
-### GET /loans/1
-
-```json
-{
-  "data": {
-    "id": 1,
-    "status": "Terlambat",
-    "members": { "name": "Ani Lestari", "email": "ani@example.com" },
-    "books": { "title": "Laskar Pelangi", "author": "Andrea Hirata" }
-  }
 }
 ```
 
@@ -185,11 +179,9 @@ curl -X PUT https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans/3 \
 
 ## Instalasi & Menjalankan Lokal
 
-**Prasyarat:** Node.js 18+, akun [Supabase](https://supabase.com).
-
 1. Clone repository
    ```bash
-   git clone https://github.com/USERNAME/NAMA-REPO.git
+   git clone https://github.com/Kabazaiku/RESPONSI-PBB-MODUL-1.git
    cd NAMA-REPO
    ```
 2. Install dependency
@@ -197,10 +189,11 @@ curl -X PUT https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans/3 \
    npm install
    ```
 3. Buat project di Supabase, lalu buka **SQL Editor** dan jalankan isi `sql/schema.sql`.
-4. Salin `.env.example` menjadi `.env`, lalu isi:
+4. Buat .env dan isi:
    ```
    SUPABASE_URL=https://xxxx.supabase.co
    SUPABASE_KEY=service_role_key_kamu
+   Port=3000
    ```
    Keduanya ada di **Project Settings → API**. Jangan pernah meng-commit `.env`.
 5. Jalankan server
@@ -209,13 +202,3 @@ curl -X PUT https://GANTI-DENGAN-LINK-VERCEL-KAMU.vercel.app/loans/3 \
    ```
    API tersedia di `http://localhost:3000`.
 
-## Deployment ke Vercel
-
-1. Push repository ke GitHub.
-2. Di [vercel.com](https://vercel.com), pilih **Add New → Project** dan import repository.
-3. Pada **Environment Variables**, tambahkan `SUPABASE_URL` dan `SUPABASE_KEY`.
-4. Klik **Deploy**, lalu salin URL hasilnya ke bagian atas README ini.
-
-## Teknologi
-
-Node.js · Express.js · Supabase (PostgreSQL) · Vercel
